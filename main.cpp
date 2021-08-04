@@ -16,21 +16,21 @@ struct EthArpPacket final {
 };
 #pragma pack(pop)
 struct arp_hdr{
-    unsigned short ar_hrd;          //hardware type : ethernet
-    unsigned short ar_pro;          //protocol : ip
+    unsigned short ar_hrd;          //ethernet
+    unsigned short ar_pro;          //protocol
     unsigned char  ar_hln;          //hardware size
     unsigned char  ar_pln;          //protocal size
-    unsigned short ar_op;           //opcode request or reply
+    unsigned short ar_op;           //request or reply
     unsigned char  ar_sha[6];       //sender mac
-    struct in_addr ar_sip;
-    unsigned char  ar_tha[6];       //Target mac (my)
-    struct in_addr ar_tip;          //Target IP  (my)
+    struct in_addr ar_sip;	    //sender IP
+    unsigned char  ar_tha[6];       //Target mac
+    struct in_addr ar_tip;          //Target IP
 } __attribute__((packed));
 
 struct eth_hdr{
-        unsigned char h_dest[6];        //destination ether addr
-        unsigned char h_source[6];      //source ether addr
-        unsigned short h_proto;         //packet type id filed
+        unsigned char h_dest[6];        //destination ether
+        unsigned char h_source[6];      //source ether
+        unsigned short h_proto;         //packet type
 } __attribute__((packed));
 
 
